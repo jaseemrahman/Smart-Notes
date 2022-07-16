@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+{% block content %}
+<form method="post">
+    {% csrf_token %}
+    <p>Are you sure want to delete "{{note.title}}"?</p>
+    <p>This action can't be undone</p>
+    <input type="submit" class="btn btn-danger" value="Confirm"/>
+</form>
+<a href="{% url 'notes.list' %}" class="btn btn-secondary">Cancel</a>
+{% endblock %}
